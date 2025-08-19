@@ -1,9 +1,12 @@
 class Samochod:
+    ilosc = 0
     def __init__(self, model, kolor, silnik):
+        Samochod.ilosc += 1
         self.model = model
         self.kolor = kolor
         self.silnik = silnik
-        print(f"Powstał samochód: {model}, {kolor}, {silnik}")
+        print(f"Powstał {self.ilosc} samochód: {model}, {kolor}, {silnik}")
+   
     def opis(self):
         print(f"Samochód: {self.model} o kolorze: {self.kolor}\n")
     def porownaj_silnik(self, obiekt):
