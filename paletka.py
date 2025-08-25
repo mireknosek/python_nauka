@@ -1,26 +1,26 @@
-class Paletka():
+class Paletka:
     ilosc = 0
-    _producent = "Firma A"
-    def __init__(self, kolor, rozmiar, nazwa="Nazwa domyslna"):
-        self.kolor_obiektu = kolor
-        self.rozmiar_obiektu = rozmiar
-        self.nazwa_obiektu = nazwa
-        print(f"Utworzono obiekt o kolorze {self.kolor_obiektu}, o ID: {id(self)}")
+    def __init__(self, kolor):
         Paletka.ilosc += 1
+        self.kolor_paletki = kolor
+        print(f"Utworzono paletkę nr: {Paletka.ilosc} ID obiektu: {id(self)}")
+    
     def __del__(self):
-        # Destruktor
         Paletka.ilosc -= 1
-        #print(f"Usunięto paletkę: {self}")
+        print(f"Usunięto obiekt ID: {id(self)}")
 
     def info(self):
-        print("------------------------------------")
-        print(f"Nazwa obiektu: {self.nazwa_obiektu}")
-        print(f"Rozmiar obiektu: {self.rozmiar_obiektu}")
-        print(f"W klasie jest obiektów: {Paletka.ilosc}")
+        print("----------------------------------")
+        print(f"Kolor dla obiektu to: {self.kolor_paletki}")
+        print(f"w klasie jest obiektów: {Paletka.ilosc}")
 
-paletka_a = Paletka("Czerwony", "XL", "Strong")
-paletka_b = Paletka("Niebieski", "Large", "XL")
+paletka_a = Paletka("Red")
+paletka_b = Paletka("Green")
 
 paletka_a.info()
-del paletka_a
-paletka_b.info
+paletka_b.info()
+
+del paletka_b
+
+paletka_a.info()
+paletka_b.info()
