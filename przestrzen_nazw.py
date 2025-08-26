@@ -1,10 +1,18 @@
-a = [10]
-def funkcja_A():
-    print(f"Wewnątrz A: {a} - ID: {id(a)}")
+class Klasa:
+    wlasciwosc_0 = "X0"
 
-def funkcja_B():
-    a[0] = 20
-    print(f"Wewnątrz B: {a} - ID: {id(a)}")
+obiekt_a = Klasa()
+obiekt_b = Klasa()
 
-funkcja_A()
-funkcja_B()
+obiekt_a.wlasciwosc_1 = "X1"
+obiekt_b.wlasciwosc_2 = "X2"
+
+print(dir(obiekt_a))
+print("---------------------------------")
+print(dir(obiekt_b))
+print("---------------------------------")
+
+print(obiekt_a.wlasciwosc_1)
+print(obiekt_b.wlasciwosc_2)
+print(obiekt_a.wlasciwosc_0)
+print(obiekt_b.wlasciwosc_0)
