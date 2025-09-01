@@ -1,18 +1,21 @@
-#
+# liczby
 
-class Liczby:
-    def __init__(self):
-        self.count = 1
+class Numbers:
     
-    def liczba(self):
+    def __init__(self):
+        self.count = 0
+
+    def number(self):
         while True:
             try:
-                liczba_wpr = float(input(f"POdaj liczbę float: "))
+                l = float(input("Podaj liczbę float: "))
                 self.count += 1
-                return liczba_wpr
+                print(f"Obiekt nr.: {self.count} to: {l}")
+                return l
+         
             except ValueError:
-                print("Zła liczba")
+                print("Złą liczba! Spróbuj ponownie.")
 
-licznik = Liczby()
-l1 = licznik.liczba()
-l2 = licznik.liczba()
+numer = Numbers()
+n1 = numer.number()
+n2 = numer.number()   
