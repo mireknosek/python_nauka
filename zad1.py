@@ -1,21 +1,20 @@
 # liczby
 
-class Numbers:
-    
+class Liczby:
     def __init__(self):
-        self.count = 0
+        self.count = 1
 
-    def number(self):
+    def liczba(self):
         while True:
             try:
                 l = float(input("Podaj liczbę float: "))
+                print(f"Nr :{self.count} = {l}")
                 self.count += 1
-                print(f"Obiekt nr.: {self.count} to: {l}")
                 return l
-         
             except ValueError:
-                print("Złą liczba! Spróbuj ponownie.")
+                print("Zła liczba")
 
-numer = Numbers()
-n1 = numer.number()
-n2 = numer.number()   
+suma = Liczby()
+suma.liczba()
+
+        
