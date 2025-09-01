@@ -33,5 +33,5 @@ def pobierz_liczby(ile):
                 print("Podaj poprwaną float!")
     return liczby
 
-#pobierz_liczby(2)
+pobierz_liczby(2)
 print(pobierz_liczby(2))
