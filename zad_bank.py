@@ -6,8 +6,11 @@ class Rachunek:
         self.imie = imie
         self.coast = coast
         self.number = random.randint(10**11, 10**12 -1)
-        print(f"\nRachunek o nr : {self.number} utworzono. {self.stan_coast()}")
+        print(f"\n* Rachunek o nr : {self.number} utworzono. Stan konta: {self.coast} *\n")
     
+    def __str__(self):
+       return f"{self.imie}, {self.number}, {self.coast}"
+
     def stan_coast(self):
         print(f"Stan konta dla {self.imie}, wynosi: {self.coast} zł\n")
 
@@ -18,15 +21,16 @@ class Rachunek:
 
     def withdraw(self, amount):
         if self.coast - amount < 0:
-            print("Nie masz tylu środków na rachunku")
+            print(f"Chcesz wydać {amount}, a nie masz tylu środków na rachunku!\n")
         else:
             self.coast -= amount
-            print(f"Wydałeś: {amount} zł, stan rachunku {self.stan_coast()}")
-            self.stan_coast
+            print(f"Wydałeś: {amount} zł")
+            self.stan_coast()
             
 
 mirek  = Rachunek("Mirek", 100)
+
 mirek.deposit(100)
-mirek.withdraw(100)
+mirek.withdraw(210)
 
 print(mirek)
