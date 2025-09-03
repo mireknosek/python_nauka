@@ -21,7 +21,8 @@ class Koszyk:
         print("\nZabrałeś koszyk\n")
 
     def dodaj_produkt(self, produkt, ilosc):
-        if not isinstance(produkt, Produkt):
+
+        if self.zaawartosc[0] == produkt
             raise TypeError("Tylko produkty z magazynu")
         if produkt.ilosc - ilosc < 0:
                 raise TypeError("Brak produkt")
@@ -32,6 +33,7 @@ class Koszyk:
         print(produkt)
 
     def usun_produkt(self, produkt, ilosc):
+        print("\nmetoda usun_produkt")
         if isinstance(produkt, Koszyk):
             self.zawartosc.remove(produkt)
             produkt.ilosc += ilosc
