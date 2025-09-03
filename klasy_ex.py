@@ -10,19 +10,32 @@ class Magazyn:
     def __str__(self):
       return f"{self.produkt} | {self.ilosc}"
 
-    def dodaj_produkt(self, produkt, ilosc):
+    def dodaj_produkt(self, ilosc):
        self.ilosc += ilosc
-       print(f"zwiekszono stan: {produkt} do {self.ilosc}")  
+       print(f"zwiekszono stan: {self.produkt} do {self.ilosc}")
 
+    def usun_produkt(self, ilosc):
+        print(f"\nUsun_produkt: {self.produkt}")
+        if self.ilosc - ilosc < 0:
+          print(f"Możesz usunąć tylko: {self.ilosc} {self.produkt}")
+        else:
+          self.ilosc -= ilosc
+          self.wyswietl_produkt()
+    
+    @classmethod
     def wyswietl_magazyn(cls):
         print("\nStan magazynu:")
         for p in cls.produkty:
-          print(f"{p.produkt} | ilość: {p.ilosc}")      
+          print(f"{p.produkt} | ilość: {p.ilosc}")    
+
+    def wyswietl_produkt(self):
+       print(f"{self.produkt}, stan: {self.ilosc}")  
         
 
-p1 = Magazyn("mlotek", 20)
-p2 = Magazyn("kilof", 40)
+mlotek = Magazyn("mlotek", 20)
+kilof = Magazyn("kilof", 40)
 
-p1.dodaj_produkt("mlotek", 0)
-
-p1.wyswietl_magazyn()
+mlotek.dodaj_produkt(10)
+Magazyn.wyswietl_magazyn()
+mlotek.usun_produkt(309)
+mlotek.wyswietl_produkt()
